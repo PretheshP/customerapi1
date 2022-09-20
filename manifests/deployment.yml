@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "aksbanking-5741"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "aksbanking-5741"
+  template:
+    metadata:
+      labels:
+        app: "aksbanking-5741"
+    spec:
+      containers:
+        - name: "aksbanking-5741"
+          image: "accountscr.azurecr.io/aksbanking"
+          ports:
+          - containerPort: 80
